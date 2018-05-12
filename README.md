@@ -9,4 +9,4 @@
 * Express Js
 
 ---
-![Wow](https://media.giphy.com/media/CL3XvCSPnAVYA/giphy.gif)
+![](https://media.giphy.com/media/CL3XvCSPnAVYA/giphy-downsized-large.gif)
