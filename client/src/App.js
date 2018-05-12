@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
-import Hola from './components/Hola'
 import './App.css';
+import All from './components/AllRecetas';
+import Preferidas from './components/Preferidas';
+import Mejores from './components/Mejores';
+import logo from './asset/recetas.svg';
 
 class App extends Component {
 
@@ -10,25 +13,23 @@ class App extends Component {
             <div id="app">
                 <nav className="navbar is-transparent" aria-label="main navigation">
                     <div className="navbar-brand">
-                        <a className="navbar-item" href="https://bulma.io">
-                            <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
-                        </a>
+                        <Link to="/" className="navbar-item">
+                            <img src={logo} alt="Recetas para Vos"/>
+                        </Link>
                     </div>
                     <div className="navbar-menu">
                         <div className="navbar-start">
-                                
-                                <Link to="/profes" className="navbar-item"> Profes</Link>
-                            
-                            <a className="navbar-item">
-                                Localidades
-                            </a>
-                            <a className="navbar-item">
-                                Clases
-                            </a>
+
+                            <Link to="/mispreferidas" className="navbar-item">Mis Preferidas</Link>
+
+                            <Link to="/mejores" className="navbar-item">Las Mejores</Link>
+
                         </div>
                     </div>
                 </nav>
-                <Route path="/profes" component={Hola}></Route>
+                <Route exact path="/" component={All}></Route>
+                <Route path="/mispreferidas" component={Preferidas}></Route>
+                <Route path="/mejores" component={Mejores}></Route>
             </div>
         );
     }
